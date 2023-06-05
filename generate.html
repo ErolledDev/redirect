@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HTML</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form style="min-width: 300px">
+    <label for="urlInput">Enter URL:</label>
+    <input type="text" id="urlInput">
+    <label for="FirstdescriptionInput">Enter First Description:</label>
+    <input type="text" id="FirstdescriptionInput">
+    <label for="SeconddescriptionInput">Enter Second Description:</label>
+    <input type="text" id="SeconddescriptionInput">
+    <label for="author">Author Details</label>
+    <input type="text" id="author" placeholder="Author Details">      
+    <label for="authorlink">Author Link</label>
+    <input type="text" id="authorlink" placeholder="Author link">
+    <button type="button" onclick="generateUrl()">Generate URL</button>
+    <div id="error-message"></div>
+    <div id="result"></div>
+  </form>
+  <script src="generate.js"></script>
+</body>
+</html>
