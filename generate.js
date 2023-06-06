@@ -13,7 +13,7 @@ function generateUrl() {
     const encodedFirstDescription = encodeURIComponent(FirstdescriptionInput.value);
     const encodedSecondDescription = encodeURIComponent(SeconddescriptionInput.value);
     const authorDetails = encodeURIComponent(authorInput.value);
-    const generatedUrl = `http://localhost:7700/redirect.html?url=${encodedUrl}&1message=${encodedFirstDescription}&2message=${encodedSecondDescription}&author=${authorDetails}&authorlink=${encodedAuthorLink}`;
+    const generatedUrl = `https://jobhiring.vercel.app/redirect.html?url=${encodedUrl}&1message=${encodedFirstDescription}&2message=${encodedSecondDescription}&author=${authorDetails}&authorlink=${encodedAuthorLink}`;
 
     const result = document.getElementById('result');
     result.innerHTML = `<input type="text" value="${generatedUrl}" id="copyInput" readonly>
