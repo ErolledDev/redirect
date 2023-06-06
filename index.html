@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="style.css">
+
+  <title>Job Hiring - Dreams and Opportunities</title>
+
+</head>
+
+<style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Wix+Madefor+Display&display=swap');
+
+body {
+
+  font-family: 'Roboto Mono', monospace;
+
+  
+
+  height: 100vh;
+
+  background: #333 url('./job.jpg') no-repeat center center / cover;
+
+  color: whitesmoke;
+
+  overflow:hidden;
+
+  
+
+}
+
+.container {
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  height: 100%;
+
+  padding: 0 3rem;
+
+}
+
+h1, h2 {
+
+  font-weight: 200;
+
+  margin: 0.4rem;
+
+}
+
+h1 {
+
+  font-size: 3.5rem;
+
+}
+
+h2 {
+
+  font-size: 2rem;
+
+  color: #aaa;
+
+}
+
+/* Cursor */
+
+.txt-type > .txt {
+
+  border-right: 0.2rem solid #777;
+
+}
+
+@media(min-width: 1200px) {
+
+  h1 {
+
+    font-size: 5rem;
+
+  }
+
+}
+
+@media(max-width: 800px) {
+
+  .container {
+
+    padding: 0 1rem;
+
+  }
+
+  h1 {
+
+    font-size: 3rem;
+
+  }
+
+}
+
+@media(max-width: 500px) {
+
+  h1 {
+
+    font-size: 2.5rem;
+
+  }
+
+  h2 {
+
+    font-size: 1.5rem;
+
+  }
+
+}
+
+.button {
+
+  display: inline-block;
+
+  vertical-align: middle;
+
+  min-width: 200px;
+
+  margin-bottom: 30px;
+
+  background-image: none;
+
+  padding: 13px 15px;
+
+  font-family: inherit;
+
+  font-size: 15px;
+
+  font-weight: 400;
+
+  text-align: center;
+
+  text-transform: uppercase;
+
+  text-decoration: none;
+
+  color: #fff;
+
+  background-color: #67b279;
+
+  border-radius: 8px;
+
+  border: none;
+
+  cursor: pointer;
+
+}
+
+.button:hover,
+
+.button:focus {
+
+  background-color: #58a273;
+
+  outline: none;
+
+}
+
+button {
+
+  display: block;
+
+  margin-top: 20px;
+
+  padding: 10px 20px;
+
+  background-color: #007bff;
+
+  color: #fff;
+
+  border: none;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+
+}
+
+button:hover {
+
+  background-color: #0069d9;
+
+}
+
+</style>
+
+<body>
+
+  <div class="container">
+
+    <h1 style="font-weight: 700;">Job Hiring <br>
+
+  <span  class="txt-type" data-wait="300" data-words='["Work Abroad", "Production Worker", "Software Developer", "Data Analyst", "Marketing Manager", "Project Manager", "Graphic Designer", "Sales Representative", "Financial Analyst", "Customer Service Representative", "Human Resources Manager", "Content Writer", "Web Developer", "Accountant", "Business Development Manager", "IT Support Specialist", "Operations Manager", "Product Manager", "Electrical Engineer", "Mechanical Engineer", "Civil Engineer", "Nurse", "Pharmacist", "Teacher", "Research Scientist", "Data Scientist", "Executive Assistant", "Administrative Assistant", "Social Media Manager", "Evento Planner", "Translator", "Financial Advisor", "Lawyer", "Chef", "Security Guard", "Warehouse Manager", "Logistics Coordinator", "Call Center Agent", "Receptionist", "Office Administrator", "Project Coordinator", "Marketing Coordinator", "Quality Assurance Analyst", "Data Entry Operator", "Network Administrator", "Systems Analyst", "UI/UX Designer", "Digital Marketing Specialist", "Business Analyst", "Operations Coordinator", "Procurement Specialist","Supply Chain Manager"]'></span>
+
+</h1>
+
+    <h2 style="font-weight: 400;">Dreams and Opportunities</h2>
+
+    <a href="https://pin.it/321gGk2"><button class="button">Apply Now</button></a>
+
+  </div>
+
+  
+
+  <script >
+
+    class TypeWriter {
+
+  constructor(txtElement, words, wait = 100) {
+
+    this.txtElement = txtElement;
+
+    this.words = words;
+
+    this.txt = '';
+
+    this.wordIndex = 0;
+
+    this.wait = parseInt(wait, 10);
+
+    this.type();
+
+    this.isDeleting = false;
+
+  }
+
+  type() {
+
+    const current = this.wordIndex % this.words.length;
+
+    const fullTxt = this.words[current];
+
+    if (this.isDeleting) {
+
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+
+    } else {
+
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
+
+    }
+
+    this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+
+    let typeSpeed = 50; // Adjusted typing speed (faster)
+
+    if (this.isDeleting) {
+
+      typeSpeed /= 2;
+
+    }
+
+    if (!this.isDeleting && this.txt === fullTxt) {
+
+      typeSpeed = this.wait;
+
+      this.isDeleting = true;
+
+    } else if (this.isDeleting && this.txt === '') {
+
+      this.isDeleting = false;
+
+      this.wordIndex++;
+
+      typeSpeed = 200;
+
+    }
+
+    setTimeout(() => this.type(), typeSpeed); // Adjusted typing speed
+
+  }
+
+}
+
+document.addEventListener('DOMContentLoaded', init);
+
+function init() {
+
+  const txtElement = document.querySelector('.txt-type');
+
+  const words = JSON.parse(txtElement.getAttribute('data-words'));
+
+  const wait = txtElement.getAttribute('data-wait');
+
+  new TypeWriter(txtElement, words, wait);
+
+}
+
+  </script>
+
+</body>
+
+</html>
+
+<!-- partial -->
+
+  <script  src="./script.js"></script>
+
+</body>
+
+</html>
+
