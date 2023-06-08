@@ -26,7 +26,7 @@ window.onload = function() {
 
 };
 
-var countdownSeconds = 30;
+var countdownSeconds = 40;
 
 function countdown() {
 
@@ -100,7 +100,7 @@ document.getElementById('redirectButton').addEventListener('click', function() {
 
     // Delay in milliseconds before showing the modal
 
-    const delay = 5000; // 5 seconds
+    const delay = 8000; // 5 seconds
 
     // Call the showModal function after the specified delay
 
