@@ -42,7 +42,7 @@ function countdown() {
 
     countdownSeconds--;
 
-    setTimeout(countdown, 1000);
+    setTimeout(countdown, 30000);
 
   } else {
 
