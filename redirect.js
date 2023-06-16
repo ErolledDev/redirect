@@ -26,7 +26,7 @@ window.onload = function() {
 
 };
 
-var countdownSeconds = 10;
+var countdownSeconds = 30;
 
 function countdown() {
 
@@ -42,7 +42,7 @@ function countdown() {
 
     countdownSeconds--;
 
-    setTimeout(countdown, 30000);
+    setTimeout(countdown, 1000);
 
   } else {
 
